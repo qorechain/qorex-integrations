@@ -1,0 +1,54 @@
+{
+  "$schema": "../versions.schema.json",
+  "chain_name": "qorechain",
+  "versions": [
+    {
+      "name": "v3.1.82",
+      "recommended_version": "v3.1.82",
+      "compatible_versions": [
+        "v3.1.82"
+      ]
+    },
+    {
+      "name": "v3.1.94",
+      "proposal": 4,
+      "height": 2122074,
+      "next_version_name": "v3.2.0"
+    },
+    {
+      "name": "v3.2.0",
+      "tag": "v3.2.0",
+      "proposal": 6,
+      "height": 2981742,
+      "previous_version_name": "v3.1.94",
+      "next_version_name": "v3.2.2"
+    },
+    {
+      "name": "v3.2.2",
+      "tag": "v3.2.2",
+      "proposal": 7,
+      "height": 3556788,
+      "previous_version_name": "v3.2.0",
+      "next_version_name": "v3.2.3"
+    },
+    {
+      "name": "v3.2.3",
+      "tag": "v3.2.3",
+      "proposal": 11,
+      "height": 3662051,
+      "previous_version_name": "v3.2.2",
+      "next_version_name": "v3.2.4"
+    },
+    {
+      "name": "v3.2.4",
+      "tag": "v3.2.4",
+      "proposal": 13,
+      "height": 3742566,
+      "previous_version_name": "v3.2.3",
+      "recommended_version": "v3.2.4",
+      "compatible_versions": [
+        "v3.2.4"
+      ]
+    }
+  ]
+}

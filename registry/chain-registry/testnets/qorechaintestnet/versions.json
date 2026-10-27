@@ -1,0 +1,68 @@
+{
+  "$schema": "../../versions.schema.json",
+  "chain_name": "qorechaintestnet",
+  "versions": [
+    {
+      "name": "v3.1.82",
+      "recommended_version": "v3.1.82",
+      "compatible_versions": [
+        "v3.1.82"
+      ]
+    },
+    {
+      "name": "v3.1.98",
+      "proposal": 5,
+      "height": 5746000,
+      "next_version_name": "v3.2.0"
+    },
+    {
+      "name": "v3.2.0",
+      "tag": "v3.2.0",
+      "proposal": 6,
+      "height": 5920000,
+      "previous_version_name": "v3.1.98",
+      "next_version_name": "v3.2.2"
+    },
+    {
+      "name": "v3.2.2",
+      "tag": "v3.2.2",
+      "proposal": 7,
+      "height": 6905034,
+      "previous_version_name": "v3.2.0",
+      "next_version_name": "v3.2.3"
+    },
+    {
+      "name": "v3.2.3",
+      "tag": "v3.2.3",
+      "proposal": 11,
+      "height": 8003746,
+      "previous_version_name": "v3.2.2",
+      "next_version_name": "v3.2.4"
+    },
+    {
+      "name": "v3.2.4",
+      "tag": "v3.2.4",
+      "proposal": 13,
+      "height": 8337253,
+      "previous_version_name": "v3.2.3",
+      "next_version_name": "v3.2.5"
+    },
+    {
+      "name": "v3.2.5",
+      "proposal": 15,
+      "height": 8890800,
+      "previous_version_name": "v3.2.4",
+      "next_version_name": "v3.2.6"
+    },
+    {
+      "name": "v3.2.6",
+      "proposal": 28,
+      "height": 8970638,
+      "previous_version_name": "v3.2.5",
+      "recommended_version": "v3.2.6",
+      "compatible_versions": [
+        "v3.2.6"
+      ]
+    }
+  ]
+}
