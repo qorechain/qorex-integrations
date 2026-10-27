@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import { testWithSynpress } from "@synthetixio/synpress";
+import { mergeTests } from "@playwright/test";
 import { describe, expect, it } from "vitest";
 import {
   QOREX_EXTENSION_MODE_UNAVAILABLE,
@@ -10,11 +10,12 @@ import {
 } from "../src/index.js";
 
 describe("qorexMockFixtures", () => {
-  it("returns a Playwright test that Synpress v4 can merge", () => {
+  // Synpress v4's testWithSynpress merges fixtures with Playwright's mergeTests.
+  it("returns a Playwright test that can be merged with other fixtures", () => {
     const test = qorexMockFixtures({ profile: "planned" });
     expect(typeof test.extend).toBe("function");
     expect(typeof test.describe).toBe("function");
-    const merged = testWithSynpress(test);
+    const merged = mergeTests(test, qorexMockFixtures({ profile: "current" }));
     expect(typeof merged.extend).toBe("function");
   });
 

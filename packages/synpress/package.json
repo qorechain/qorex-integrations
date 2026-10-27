@@ -58,17 +58,10 @@
     "@qorechain/qorex-wallet-mock": "workspace:*"
   },
   "peerDependencies": {
-    "@playwright/test": ">=1.48.0",
-    "@synthetixio/synpress": "4.1.2"
-  },
-  "peerDependenciesMeta": {
-    "@synthetixio/synpress": {
-      "optional": true
-    }
+    "@playwright/test": ">=1.48.0"
   },
   "devDependencies": {
-    "@playwright/test": "1.64.0",
-    "@synthetixio/synpress": "4.1.2"
+    "@playwright/test": "1.64.0"
   },
   "publishConfig": {
     "access": "public"

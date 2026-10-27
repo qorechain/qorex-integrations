@@ -1,18 +1,16 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 // The demo against the mock in the "current" profile: what QoreX does today.
-// Uses Synpress v4's testWithSynpress to show the fixture merges with it.
 
 import { ed25519 } from "@noble/curves/ed25519.js";
 import { PUBLIC_TEST_MNEMONIC } from "@qorechain/qorex-wallet-mock";
 import { qorexMockFixtures } from "@qorechain/qorex-synpress";
 import { verifyHybridTx } from "@qorechain/qoresign";
-import { testWithSynpress } from "@synthetixio/synpress";
 import { base58 } from "@scure/base";
 import { ACCOUNT_NUMBER, stubChain } from "./chain-stub";
 import { expect, out, run } from "./helpers";
 
-const test = testWithSynpress(qorexMockFixtures({ profile: "current", pollIntervalMs: 100 }));
+const test = qorexMockFixtures({ profile: "current", pollIntervalMs: 100 });
 
 test.beforeEach(async ({ page }) => {
   await page.goto("/");
