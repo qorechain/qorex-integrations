@@ -1,0 +1,35 @@
+{
+  "name": "@qorechain/qorex-demo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Demo dApp that exercises every QoreX path on qorechain-diana: EVM, QoreChain native and Solana.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src e2e",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@qorechain/qorex-types": "workspace:*",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@noble/curves": "2.4.0",
+    "@playwright/test": "1.64.0",
+    "@qorechain/qoresign": "0.1.0",
+    "@qorechain/qorex-synpress": "workspace:*",
+    "@qorechain/qorex-wallet-mock": "workspace:*",
+    "@scure/base": "2.4.0",
+    "@synthetixio/synpress": "4.1.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "viem": "2.57.5",
+    "vite": "8.3.4"
+  }
+}

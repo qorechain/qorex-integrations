@@ -1,0 +1,17 @@
+{
+  "name": "@qorechain/qorex-example-playwright-e2e",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Minimal Playwright test of a dApp page with the QoreX wallet mock.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint tests playwright.config.ts",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.0",
+    "@qorechain/qorex-synpress": "workspace:*"
+  }
+}
