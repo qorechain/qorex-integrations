@@ -1,0 +1,22 @@
+# QoreX integrations
+
+> Packages and guides for adding the QoreX wallet to dApps: RainbowKit/wagmi (EVM, EIP-6963 rdns network.qore.qorex), Interchain Kit and cosmos-kit (QoreChain native lane), Solana Wallet Standard; a mock wallet and Playwright fixtures for end-to-end tests. Apache-2.0.
+
+Key facts: on QoreChain's native lane use `window.qorex.native.signAndBroadcast` (QoreX builds the transaction and adds the hybrid ML-DSA-87 signature); Amino is refused by design; EVM transactions on QoreChain need a registered ML-DSA-87 key and an EVM authorization window; QoreChain's SVM lane is not open yet. Check `window.qorex.native.capabilities` before using a feature. Chain ids: qorechain-vladi (mainnet, EVM 9801), qorechain-diana (testnet, EVM 9800).
+
+## Docs
+- [README](README.md): packages and support table
+- [Quickstart](docs/quickstart.md): wagmi + RainbowKit
+- [Add to a MetaMask integration](docs/guides/add-to-metamask-integration.md)
+- [Add to a Keplr integration](docs/guides/add-to-keplr-integration.md)
+- [Add to a Phantom integration](docs/guides/add-to-phantom-integration.md)
+- [End-to-end testing](docs/guides/e2e-testing.md)
+- [Errors and chain ids](docs/guides/errors-and-chain-ids.md)
+
+## Packages
+- [@qorechain/qorex-types](packages/types/README.md)
+- [@qorechain/qorex-rainbowkit](packages/rainbowkit/README.md)
+- [@qorechain/qorex-interchain-kit](packages/interchain-kit/README.md)
+- [@qorechain/qorex-cosmos-kit](packages/cosmos-kit/README.md)
+- [@qorechain/qorex-wallet-mock](packages/wallet-mock/README.md)
+- [@qorechain/qorex-synpress](packages/synpress/README.md)
