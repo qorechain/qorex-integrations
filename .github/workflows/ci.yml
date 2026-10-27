@@ -1,0 +1,66 @@
+# SPDX-License-Identifier: Apache-2.0
+#
+# Build, lint, typecheck and unit tests on Node 20 and 22.
+#
+# Note: @qorechain/qorex-wallet-mock depends on @qorechain/qoresign, which CI installs
+# from npm. Publish @qorechain/qoresign 0.1.0 before this repository's first CI
+# run, and generate pnpm-lock.yaml against the npm release.
+
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        with:
+          version: 9.12.0
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ matrix.node }}
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm -r build
+
+      - run: pnpm -r lint
+
+      - run: pnpm -r typecheck
+
+      - run: pnpm -r test
+
+      - name: Published files carry no source maps or local paths
+        run: |
+          if grep -rl "sourceMappingURL" packages/*/dist; then exit 1; fi
+          if grep -rl "/home/runner" packages/*/dist; then exit 1; fi
+          for p in packages/*/; do
+            (cd "$p" && npm pack --dry-run --json | node -e '
+              const files = JSON.parse(require("fs").readFileSync(0, "utf8"))[0].files.map((f) => f.path);
+              const bad = files.filter((f) => !/^(dist\/|README\.md$|LICENSE$|package\.json$)/.test(f));
+              if (bad.length) { console.error(process.cwd(), bad); process.exit(1); }
+            ')
+          done

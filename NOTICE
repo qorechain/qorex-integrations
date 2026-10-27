@@ -1,0 +1,16 @@
+QoreX integrations
+Copyright 2026 QoreChain Association
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Runtime dependencies of the published packages:
+  @qorechain/qoresign       Apache-2.0  QoreChain Association (qorex-wallet-mock)
+  @noble/curves, @noble/hashes, @scure/base, @scure/bip39   MIT  Paul Miller (qorex-wallet-mock)
+  viem                      MIT         (qorex-wallet-mock)
+
+Peer dependencies, installed by the application:
+  @rainbow-me/rainbowkit, wagmi, viem   MIT
+  @interchain-kit/core                  MIT
+  @cosmos-kit/core                      BSD-3-Clause-Clear
+  @playwright/test                      Apache-2.0
+  @synthetixio/synpress                 MIT
