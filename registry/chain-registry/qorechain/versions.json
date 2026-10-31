@@ -49,6 +49,17 @@
       "compatible_versions": [
         "v3.2.4"
       ]
+    },
+    {
+      "name": "v3.2.5",
+      "tag": "v3.2.5",
+      "proposal": 14,
+      "height": 3906833,
+      "previous_version_name": "v3.2.4",
+      "recommended_version": "v3.2.5",
+      "compatible_versions": [
+        "v3.2.5"
+      ]
     }
   ]
 }

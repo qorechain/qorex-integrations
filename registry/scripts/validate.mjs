@@ -918,7 +918,7 @@ async function checkUpstream() {
     const tag = cb.tag || cb.recommended_version;
     const st = await status(`${GH_API}/repos/${repo}/git/ref/tags/${tag}`);
     if (st === 200) ok(`${net.key}: tag ${tag} exists in ${repo}`);
-    else warn(`${net.key}: tag ${tag} not found in ${repo} (HTTP ${st}); publish the tag before submitting`);
+    else warn(`${net.key}: tag ${tag} not found in ${repo} (HTTP ${st}); testnet releases have no public source until mainnet runs them: submit the mainnet folder alone`);
   }
 }
 

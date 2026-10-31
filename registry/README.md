@@ -180,12 +180,14 @@ Changes compared with what is on upstream `master` (from the July PR):
 
 Before submitting:
 
-- Publish tag `v3.2.6` (and `v3.2.5`) in `qorechain/qorechain-core`; the
-  testnet `recommended_version` points at it and the public repository has no
-  such tag yet. Otherwise submit the mainnet folder alone.
-- If mainnet upgrade v3.2.5 (proposal 14) has been applied by then, bump the
-  mainnet `codebase` and add the v3.2.5 entry to `versions.json` first
-  (`node scripts/validate.mjs` fails until both match the chain).
+- Submit the mainnet folder alone. The public `qorechain/qorechain-core`
+  repository carries only what mainnet runs (v3.2.5, tag `v3.2.5`); testnet
+  releases ahead of mainnet have no public source, so the testnet entry
+  (`recommended_version` v3.2.6) is kept here and submitted once its version
+  is published there.
+- When mainnet applies a new upgrade, bump the mainnet `codebase` and add the
+  entry to `versions.json` first (`node scripts/validate.mjs` fails until both
+  match the chain).
 
 Submit:
 
@@ -240,5 +242,4 @@ Node 22 or newer, no dependencies. The script:
 - scans the published files for wording that must not appear in this public
   repository.
 
-Result on 27 October 2026: 297 checks passed, 0 failed, 1 warning (tag `v3.2.6`
-is not yet published in `qorechain/qorechain-core`).
+Result on 31 October 2026: 298 checks passed, 0 failed, 1 warning (the testnet version v3.2.6 has no public source yet, as expected).
